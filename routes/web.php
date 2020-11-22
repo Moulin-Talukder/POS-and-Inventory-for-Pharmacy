@@ -21,18 +21,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/inbox', function(){
-	echo "inbox";
-})->name('inbox');
 
-Route::get('/calender', function(){
-	echo "calender";
-})->name('calender');
-
-Route::get('/typography', function(){
-	echo "typography";
-})->name('typography');
-
+//PRODUCT ROUTES ARE HERE
 Route::get('/product','ProductController@Index')->name('product');
 
 Route::post('/product/create','ProductController@createProduct')->name('product.create');
+
+//EMPLOYEE ROUTES ARE HERE
+Route::get('/add-employee', 'EmployeeController@index')->name('add.employee');
+Route::post('/insert-employee', 'EmployeeController@store')->name('insert.employee');
+Route::get('/all-employee', 'EmployeeController@employees')->name('all.employee');
+Route::get('/view-employee/{id}', 'EmployeeController@ViewEmployee');
+Route::get('/delete-employee/{id}', 'EmployeeController@DeleteEmployee');
+Route::get('/edit-employee/{id}', 'EmployeeController@EditEmployee');
+Route::post('/update-employee/{id}', 'EmployeeController@UpdateEmployee');
