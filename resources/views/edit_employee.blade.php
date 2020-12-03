@@ -71,7 +71,7 @@
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">NID NO.</label>
-                                                <input type="text" class="form-control" name="nid no" value="{{$edit->nid_no}}" >
+                                                <input type="text" class="form-control" name="nid_no" value="{{$edit->nid_no}}" >
                                             </div>
 
                                             <div class="form-group">

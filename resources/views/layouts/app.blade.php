@@ -205,23 +205,22 @@
                                 </ul>
                             </li>
 
-                            <li>
-                                <a href="#" class="waves-effect"><i class="md md-event"></i><span> Calendar </span></a>
+                            
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Customers </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ route('add.customer')}}">Add Customer</a></li>
+                                    <li><a href="{{ route('all.customer')}}">All Customers</a></li>
+ 
+                                </ul>
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Elements </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Suppliers </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="#">Typography</a></li>
-                                    <!-- <li><a href="buttons.html">Buttons</a></li>
-                                    <li><a href="panels.html">Panels</a></li>
-                                    <li><a href="checkbox-radio.html">Checkboxs-Radios</a></li>
-                                    <li><a href="tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                                    <li><a href="modals.html">Modals</a></li>
-                                    <li><a href="bootstrap-ui.html">BS Elements</a></li>
-                                    <li><a href="progressbars.html">Progress Bars</a></li>
-                                    <li><a href="notification.html">Notification</a></li>
-                                    <li><a href="sweet-alert.html">Sweet-Alert</a></li> -->
+ 
                                 </ul>
                             </li>
 

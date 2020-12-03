@@ -63,27 +63,12 @@ class EmployeeController extends Controller
                     $data['photo']=$image_url;
                     $employee=DB::table('employees')
                     ->insert($data);
-                    if($employee){
-                        $notification=array(
-                            'message'=>'Successfully Employee Inserted ',
-                            'alert-type'=>'success'
-                        );
-                        return Redirect()->route('add.employee')->with($notification);
-                    }else{
-                        $notification=array(
-                            'message'=> 'error ',
-                            'alert-type' => 'success'
-                        );
-                        return Redirect()->back()->with('message','Product Created Successfully.');
-                    }
-                }else{
-                    return Redirect()->back();
-                }
-            }else{
-                return Redirect()->back();
-            }
-    }
 
+                    return Redirect()->route('add.employee')->with('message','Employee Added Successfully.');
+    
+                }
+            }
+        }
 //all employees return here
     public function employees(){
 
@@ -186,4 +171,5 @@ class EmployeeController extends Controller
 
 
 }
+
 }
