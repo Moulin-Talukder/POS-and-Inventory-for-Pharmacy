@@ -26,8 +26,8 @@ class CustomerController extends Controller
 
         $validateData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|unique:employees|max:255',
-            'phone' => 'required|unique:employees|max:255',
+            'email' => 'required|unique:customers|max:255',
+            'phone' => 'required|unique:customers|max:255',
             'address' => 'required',
             'photo' => 'required',
             'city' => 'required',
@@ -43,15 +43,11 @@ class CustomerController extends Controller
         $data['bank_name']=$request->bank_name;
         $data['bank_branch']=$request->bank_branch;
         $data['city']=$request->city;
+        
         $image = $request->file('photo');
-
         if($image){
-            $image_name = $request->name;
+            $image_name = uniqid('uploads__',true);
             $ext= strtolower($image->getClientOriginalExtension());
-
-            
-
-            // $image->getClientOriginalName()
 
             $image_full_name=$image_name.'.'.$ext;
             $upload_path='public/customer/';
@@ -65,8 +61,10 @@ class CustomerController extends Controller
 
             }
         }
-    }
 
+        return redirect()->route('add.customer')->with('message','Customer Added Successfully.');
+    }
+    //view all customer
     public function AllCustomer(){
             $customer=DB::table('customers')->get();
             return view("all_Customer")->with('customer', $customer);
@@ -107,8 +105,8 @@ public function EditCustomer($id){
 
         $validateData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|unique:employees|max:255',
-            'phone' => 'required|unique:employees|max:255',
+            'email' => 'required|max:255',
+            'phone' => 'required|max:255',
             'address' => 'required',
             'city' => 'required',
           ]);
@@ -126,36 +124,24 @@ public function EditCustomer($id){
           $data['city']=$request->city;
           $image = $request->photo;
 
-
+          $img=DB::table('customers')->where('id',$id)->first();
         if($image){
-            $image_name = $request->name;
+            $image_name = uniqid('uploads__',true);
                 $ext= strtolower($image->getClientOriginalExtension());
-
-                
-
-                // $image->getClientOriginalName()
-
                 $image_full_name=$image_name.'.'.$ext;
                 $upload_path='public/customer/';
                 $image_url=$upload_path.$image_full_name;
                 $success=$image->move($upload_path,$image_full_name);
-                if($success){
-                    $data['photo']=$image_url;
-                    $img=DB::table('customers')->where('id',$id)->first();
+                 $data['photo']=$image_url;
                     $image_path = $img->photo;
                     $done=unlink($image_path);
                     $user=DB::table('customers')->where('id',$id)->update($data);
-                    if($user){
-                        return Redirect()->route('all.customer')->with('message','Customer Updated Successfully.');
-                    }else{
-
-                    }
-                    
-
+                    return redirect()->route('all.customer')->with('message','Customer Updated Successfully.');
                     
         }
-    }
+        $user=DB::table('customers')->where('id',$id)->update($data);
 
+        return redirect()->route('all.customer')->with('message','Customer Updated Successfully.');
 
 }
 

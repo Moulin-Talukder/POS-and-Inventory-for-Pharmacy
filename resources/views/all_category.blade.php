@@ -35,8 +35,8 @@
                               <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">All Customers</h3>
-                                        <a href="{{ route('add.customer')}}" class="btn btn-sm btn-info pull-right">Add New</a>
+                                        <h3 class="panel-title">All Category</h3>
+                                        <a href="{{ route('add.category')}}" class="btn btn-sm btn-info pull-right">Add New</a>
                                     </div>
                                     <div class="panel-body">
                                         <div class="row">
@@ -44,28 +44,21 @@
                                                 <table id="datatable" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr>
+                                                            <th>Sl</th>
                                                             <th>Name</th>
-                                                            <th>Phone</th>
-                                                            <th>Address</th>
-                                                            <th>Image</th>
-                                                            <th>City</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
 
                                              
                                                     <tbody>
-                                                    @foreach($customer as $row)
+                                                    @foreach($category as $row)
                                                         <tr>
-                                                            <td>{{ $row->name }}</td>
-                                                            <td>{{ $row->phone }}</td>
-                                                            <td>{{ $row->address }}</td>
-                                                            <td><img src="{{$row->photo}}" style="height: 60px; width: 60px;"></td>
-                                                            <td>{{ $row->city }}</td>
+                                                            <td>{{ $row->id }}</td>
+                                                            <td>{{ $row->cat_name }}</td>
                                                             <td>
-                                                            <a href="{{ URL::to('edit-customer/'.$row->id)}}" class="btn btn-sm btn-info">Edit</a>
-                                                            <a href="{{ URL::to('delete-customer/'.$row->id)}}" class="btn btn-sm btn-danger" id="delete">Delete</a>
-                                                            <a href="{{ URL::to('view-customer/'.$row->id)}}" class="btn btn-sm btn-primary">View</a>
+                                                            <a href="{{ URL::to('edit-category/'.$row->id)}}" class="btn btn-sm btn-info">Edit</a>
+                                                            <a href="{{ URL::to('delete-category/'.$row->id)}}" class="btn btn-sm btn-danger" id="delete">Delete</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

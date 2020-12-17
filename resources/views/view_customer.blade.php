@@ -25,8 +25,8 @@
                                                       <!-- Basic example -->
                                                       <div class="col-md-2"></div>
                                                       <div class="col-md-8">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">View Customer</h3></div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading"><h3 class="panel-title text-white">View Customer</h3></div>
                                     <div class="panel-body">
 
                                     

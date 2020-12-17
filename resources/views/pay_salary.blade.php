@@ -35,8 +35,8 @@
                               <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">All Customers</h3>
-                                        <a href="{{ route('add.customer')}}" class="btn btn-sm btn-info pull-right">Add New</a>
+                                        <h3 class="panel-title">Pay Salary <span class="pull-right text-danger">{{date("F Y")}}</span></h3>
+                                        
                                     </div>
                                     <div class="panel-body">
                                         <div class="row">
@@ -45,27 +45,24 @@
                                                     <thead>
                                                         <tr>
                                                             <th>Name</th>
-                                                            <th>Phone</th>
-                                                            <th>Address</th>
-                                                            <th>Image</th>
-                                                            <th>City</th>
+                                                            <th>Photo</th>
+                                                            <th>Salary</th>
+                                                            <th>Month</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
 
                                              
                                                     <tbody>
-                                                    @foreach($customer as $row)
+                                                    @foreach($employee as $row)
                                                         <tr>
                                                             <td>{{ $row->name }}</td>
-                                                            <td>{{ $row->phone }}</td>
-                                                            <td>{{ $row->address }}</td>
                                                             <td><img src="{{$row->photo}}" style="height: 60px; width: 60px;"></td>
-                                                            <td>{{ $row->city }}</td>
+                                                            <td>{{ $row->salary }}</td>
+                                                            <td><span class="badge badge-success">{{date("F", strtotime('-1 months')) }}</span></td>
                                                             <td>
-                                                            <a href="{{ URL::to('edit-customer/'.$row->id)}}" class="btn btn-sm btn-info">Edit</a>
-                                                            <a href="{{ URL::to('delete-customer/'.$row->id)}}" class="btn btn-sm btn-danger" id="delete">Delete</a>
-                                                            <a href="{{ URL::to('view-customer/'.$row->id)}}" class="btn btn-sm btn-primary">View</a>
+                                                            
+                                                            <a href="#" class="btn btn-sm btn-primary">Pay Now</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

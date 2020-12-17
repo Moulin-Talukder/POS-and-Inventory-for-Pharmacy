@@ -36,6 +36,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">All Employees</h3>
+                                        <a href="{{ route('add.employee')}}" class="btn btn-sm btn-info pull-right">Add New</a>
                                     </div>
                                     <div class="panel-body">
                                         <div class="row">

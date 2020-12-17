@@ -35,59 +35,70 @@
                                                       <div class="col-md-2"></div>
                                                       <div class="col-md-8">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">Update Customer Information</h3></div>
+                                    <div class="panel-heading"><h3 class="panel-title">Update Supplier Information </h3></div>
                                     <div class="panel-body">
 
                                     
-                                        <form role="form" action="{{ url('/update-customer/'.$edit->id) }}" method="post" enctype="multipart/form-data">
-                                        
+                                        <form role="form" action="{{ url('/update-supplier/'.$edit->id) }}" method="post" enctype="multipart/form-data">
                                         @csrf
+
                                         <div class="form-group">
                                             <img src="{{ URL::to($edit->photo)}}" name="old_photo" style="height: 80px; width: 80px;">
-                                           
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Customer Name</label>
-                                                <input type="text" class="form-control" name="name" value="{{$edit->name}}" required>
+                                                <label for="exampleInputEmail1">Supplier Name</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Full Name" value="{{$edit->name}}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Email</label>
-                                                <input type="email" class="form-control" name="email" value="{{$edit->email}}" >
+                                                <input type="email" class="form-control" name="email" placeholder="Email" value="{{$edit->email}}" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Phone</label>
-                                                <input type="text" class="form-control" name="phone" value="{{$edit->phone}}" required>
+                                                <input type="text" class="form-control" name="phone" placeholder="Phone" value="{{$edit->phone}}" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Address</label>
-                                                <input type="text" class="form-control" name="address" value="{{$edit->address}}" required>
+                                                <input type="text" class="form-control" name="address" placeholder="Address" value="{{$edit->address}}" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Shop Name</label>
+                                                <input type="text" class="form-control" name="shop" placeholder="Shop Name" value="{{$edit->shop}}" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Account Holder</label>
-                                                <input type="text" class="form-control" name="account_holder" value="{{$edit->account_holder}}" required>
+                                                <input type="text" class="form-control" name="accountholder" placeholder="Account Holder" value="{{$edit->accountholder}}" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Account Number</label>
-                                                <input type="text" class="form-control" name="account_number" value="{{$edit->account_number}}" >
+                                                <input type="text" class="form-control" name="accountnumber" placeholder="Account Number" value="{{$edit->accountnumber}}" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Bank Name</label>
-                                                <input type="text" class="form-control" name="bank_name" value="{{$edit->bank_name}}" required>
+                                                <input type="text" class="form-control" name="bankname" placeholder="Bank Name" value="{{$edit->bankname}}" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Branch Name</label>
-                                                <input type="text" class="form-control" name="bank_branch" value="{{$edit->bank_branch}}" required>
+                                                <input type="text" class="form-control" name="branchname" placeholder="Branch Name" value="{{$edit->branchname}}" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">City</label>
-                                                <input type="text" class="form-control" name="city" value="{{$edit->city}}" required>
+                                                <input type="text" class="form-control" name="city" placeholder="City" value="{{$edit->city}}" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Supplier Type</label>
+                                                <select name="type" class="form-control">
+                                                <option value="{{$edit->type}}">{{$edit->type}}</option>
+                                                </select>
                                             </div>
 
                                             <div class="form-group">
@@ -97,7 +108,10 @@
                                             </div>
 
                                             
-                                            <button type="submit" class="btn btn-purple waves-effect waves-light">Update</button>
+                                            <div class="form-group">
+                                                
+                                            </div>
+                                            <button type="submit" class="btn btn-purple waves-effect waves-light">Submit</button>
                                         </form>
                                     </div><!-- panel-body -->
                                 </div> <!-- panel -->

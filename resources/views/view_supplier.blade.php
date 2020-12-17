@@ -26,7 +26,7 @@
                                                       <div class="col-md-2"></div>
                                                       <div class="col-md-8">
                                                       <div class="panel panel-primary">
-                                    <div class="panel-heading"><h3 class="panel-title text-white">View Employee</h3></div>
+                                    <div class="panel-heading"><h3 class="panel-title text-white">View Supplier</h3></div>
                                     <div class="panel-body">
 
                                     
@@ -55,26 +55,37 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Experience</label>
-                                                <p>{{$single->experience}}</p>                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">NID NO.</label>
-                                                <p>{{$single->nid_no}}</p>                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Salary</label>
-                                                <p>{{$single->salary}}</p>
+                                                <label for="exampleInputPassword1">Profession</label>
+                                                <p>{{$single->type}}</p>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Vacation</label>
-                                                <p>{{$single->vacation}}</p>
+                                                <label for="exampleInputPassword1">Shop Name</label>
+                                                <p>{{$single->shop}}</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Account Name</label>
+                                                <p>{{$single->accountholder}}</p>                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Account Number</label>
+                                                <p>{{$single->accountnumber}}</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Bank Name</label>
+                                                <p>{{$single->bankname}}</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Branch Name</label>
+                                                <p>{{$single->branchname}}</p>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">City</label>
-                                                <p>{{$single->city}}</p>
+                                                <p>{{$single->city}}</p>                                            
                                             </div>
 
                                             

@@ -35,69 +35,82 @@
                                                       <div class="col-md-2"></div>
                                                       <div class="col-md-8">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">Update Customer Information</h3></div>
+                                    <div class="panel-heading"><h3 class="panel-title">Add Supplier</h3></div>
                                     <div class="panel-body">
 
                                     
-                                        <form role="form" action="{{ url('/update-customer/'.$edit->id) }}" method="post" enctype="multipart/form-data">
-                                        
+                                        <form role="form" action="{{ route('insert.supplier') }}" method="post" enctype="multipart/form-data">
                                         @csrf
-                                        <div class="form-group">
-                                            <img src="{{ URL::to($edit->photo)}}" name="old_photo" style="height: 80px; width: 80px;">
-                                           
-                                            </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Customer Name</label>
-                                                <input type="text" class="form-control" name="name" value="{{$edit->name}}" required>
+                                                <label for="exampleInputEmail1">Supplier Name</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Full Name" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Email</label>
-                                                <input type="email" class="form-control" name="email" value="{{$edit->email}}" >
+                                                <input type="email" class="form-control" name="email" placeholder="Email" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Phone</label>
-                                                <input type="text" class="form-control" name="phone" value="{{$edit->phone}}" required>
+                                                <input type="text" class="form-control" name="phone" placeholder="Phone" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Address</label>
-                                                <input type="text" class="form-control" name="address" value="{{$edit->address}}" required>
+                                                <input type="text" class="form-control" name="address" placeholder="Address" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Shop Name</label>
+                                                <input type="text" class="form-control" name="shop" placeholder="Shop Name" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Account Holder</label>
-                                                <input type="text" class="form-control" name="account_holder" value="{{$edit->account_holder}}" required>
+                                                <input type="text" class="form-control" name="accountholder" placeholder="Account Holder" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Account Number</label>
-                                                <input type="text" class="form-control" name="account_number" value="{{$edit->account_number}}" >
+                                                <input type="text" class="form-control" name="accountnumber" placeholder="Account Number" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Bank Name</label>
-                                                <input type="text" class="form-control" name="bank_name" value="{{$edit->bank_name}}" required>
+                                                <input type="text" class="form-control" name="bankname" placeholder="Bank Name"required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Branch Name</label>
-                                                <input type="text" class="form-control" name="bank_branch" value="{{$edit->bank_branch}}" required>
+                                                <input type="text" class="form-control" name="branchname" placeholder="Branch Name"required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">City</label>
-                                                <input type="text" class="form-control" name="city" value="{{$edit->city}}" required>
+                                                <input type="text" class="form-control" name="city" placeholder="City"required>
                                             </div>
 
                                             <div class="form-group">
-                                            <!-- <img id="image" src="#" /> -->
-                                                <label for="exampleInputPassword1">New Photo</label>
-                                                <input type="file" name="photo" accept="image/*" class="upload" onchange="readURL(this);">
+                                                <label for="exampleInputPassword1">Supplier Type</label>
+                                                <select name="type" class="form-control">
+                                                <option disabled="" selected=""></option>
+                                                <option value="Distributor">Distributor</option>
+                                                <option value="WholeSeller">Whole Seller</option>
+                                                <option value="Brochure">Brochure</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                            <img id="image" src="#" />
+                                                <label for="exampleInputPassword1">Photo</label>
+                                                <input type="file" name="photo" accept="image/*" class="upload" required onchange="readURL(this);">
                                             </div>
 
                                             
-                                            <button type="submit" class="btn btn-purple waves-effect waves-light">Update</button>
+                                            <div class="form-group">
+                                                
+                                            </div>
+                                            <button type="submit" class="btn btn-purple waves-effect waves-light">Submit</button>
                                         </form>
                                     </div><!-- panel-body -->
                                 </div> <!-- panel -->

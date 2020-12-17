@@ -43,3 +43,28 @@ Route::get('/delete-customer/{id}', 'CustomerController@DeleteCustomer');
 Route::get('/edit-customer/{id}', 'CustomerController@EditCustomer');
 Route::post('/update-customer/{id}', 'CustomerController@UpdateCustomer');
 Route::get('/view-customer/{id}', 'CustomerController@ViewCustomer');
+
+//SUPPLIER ROUTES ARE HERE
+Route::get('/add-supplier', 'SupplierController@index')->name('add.supplier');
+Route::post('/insert-supplier', 'SupplierController@store')->name('insert.supplier');
+Route::get('/all-supplier', 'SupplierController@AllSupplier')->name('all.supplier');
+Route::get('/edit-supplier/{id}', 'SupplierController@EditSupplier');
+Route::post('/update-supplier/{id}', 'SupplierController@UpdateSupplier');
+Route::get('/view-supplier/{id}', 'SupplierController@ViewSupplier');
+Route::get('/delete-supplier/{id}', 'SupplierController@DeleteSupplier');
+
+//SALARY ROUTES ARE HERE
+Route::get('/add-advanced-salary', 'SalaryController@AddAdvancedSalary')->name('add.advancedsalary');
+Route::post('/insert-advancedsalary', 'SalaryController@InsertAdvanced')->name('insert.advancedsalary');
+Route::get('/all-advanced-salary', 'SalaryController@AllSalary')->name('all.advancedsalary');
+Route::get('/pay-salary', 'SalaryController@PaySalary')->name('pay.salary');
+
+
+//CATEGORY ROUTES ARE HERE
+Route::get('/add-category', 'CategoryController@AddCategory')->name('add.category');
+Route::post('/insert-category', 'CategoryController@InsertCategory')->name('insert.category');
+Route::get('/all-category', 'CategoryController@AllCategory')->name('all.category');
+Route::get('/delete-category/{id}', 'CategoryController@DeleteCategory');
+Route::get('/edit-category/{id}', 'CategoryController@EditCategory');
+Route::post('/update-category/{id}', 'CategoryController@UpdateCategory');
+

@@ -48,7 +48,7 @@ class EmployeeController extends Controller
         $image = $request->file('photo');
 
             if($image){
-                $image_name = $request->name;
+                $image_name = uniqid('uploads__',true);
                 $ext= strtolower($image->getClientOriginalExtension());
 
                 
@@ -68,6 +68,8 @@ class EmployeeController extends Controller
     
                 }
             }
+
+            return redirect()->route('add.employee')->with('message','Employee Added Successfully.');
         }
 //all employees return here
     public function employees(){
@@ -119,8 +121,8 @@ class EmployeeController extends Controller
 
         $validateData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|unique:employees|max:255',
-            'nid_no' => 'required|unique:employees|max:255',
+            'email' => 'required|max:255',
+            'nid_no' => 'required|max:255',
             'address' => 'required',
             'phone' => 'required|max:13',
             'salary' => 'required',
@@ -139,36 +141,25 @@ class EmployeeController extends Controller
         $data['city']=$request->city;
         $image = $request->photo;
 
-
+        $img=DB::table('employees')->where('id',$id)->first();
         if($image){
-            $image_name = $request->name;
+            $image_name = uniqid('uploads__',true);
                 $ext= strtolower($image->getClientOriginalExtension());
-
-                
-
-                // $image->getClientOriginalName()
-
                 $image_full_name=$image_name.'.'.$ext;
                 $upload_path='public/employee/';
                 $image_url=$upload_path.$image_full_name;
                 $success=$image->move($upload_path,$image_full_name);
-                if($success){
+                
                     $data['photo']=$image_url;
-                    $img=DB::table('employees')->where('id',$id)->first();
                     $image_path = $img->photo;
                     $done=unlink($image_path);
                     $user=DB::table('employees')->where('id',$id)->update($data);
-                    if($user){
-                        return Redirect()->route('all.employee')->with('message','Employee Updated Successfully.');
-                    }else{
-
-                    }
-                    
-
-                    
-        }
+                    return Redirect()->route('all.employee')->with('message','Employee Updated Successfully.');
+                       
     }
-
+    $user=DB::table('employees')->where('id',$id)->update($data);
+     
+    return Redirect()->route('all.employee')->with('message','Employee Updated Successfully.');
 
 }
 
