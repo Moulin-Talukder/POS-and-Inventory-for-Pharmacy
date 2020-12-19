@@ -23,8 +23,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //PRODUCT ROUTES ARE HERE
-Route::get('/product','ProductController@Index')->name('product');
-Route::post('/product/create','ProductController@createProduct')->name('product.create');
+Route::get('/add-product', 'ProductController@AddProduct')->name('add.product');
+Route::post('/insert-product', 'ProductController@InsertProduct')->name('insert.product');
+Route::get('/all-product', 'ProductController@AllProduct')->name('all.product');
+Route::get('/delete-product/{id}', 'ProductController@DeleteProduct');
+Route::get('/edit-product/{id}', 'ProductController@EditProduct');
+Route::post('/update-product/{id}', 'ProductController@UpdateProduct');
+Route::get('/view-product/{id}', 'ProductController@ViewProduct');
+
 
 //EMPLOYEE ROUTES ARE HERE
 Route::get('/add-employee', 'EmployeeController@index')->name('add.employee');

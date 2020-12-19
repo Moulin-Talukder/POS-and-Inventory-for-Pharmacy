@@ -83,9 +83,8 @@ class CustomerController extends Controller
                  ->where('id',$id)
                  ->delete();       
 
-                 return Redirect()->route('all.customer')->with('message','Deleted Successfully.');
-
-        
+            return Redirect()->route('all.customer')->with('message','Deleted Successfully.');
+       
 }
 
 
@@ -145,7 +144,7 @@ public function EditCustomer($id){
 
 }
 
-//view a single employee
+//view a single customer
 public function ViewCustomer($id){
 
     $single=DB::table('customers')

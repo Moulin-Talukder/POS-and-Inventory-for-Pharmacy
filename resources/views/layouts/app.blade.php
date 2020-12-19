@@ -200,15 +200,13 @@
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('add.employee')}}">Add Employee</a></li>
                                     <li><a href="{{ route('all.employee')}}">All Employee</a></li>
-                                    <!-- <li><a href="email-compose.html">Compose Mail</a></li>
-                                    <li><a href="email-read.html">View Mail</a></li> -->
                                 </ul>
                             </li>
 
                             
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Customers </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fas fa-users"></i> <span> Customers </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('add.customer')}}">Add Customer</a></li>
                                     <li><a href="{{ route('all.customer')}}">All Customers</a></li>
@@ -217,7 +215,7 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Suppliers </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fas fa-users"></i> <span> Suppliers </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('add.supplier')}}">Add Supplier</a></li>
                                     <li><a href="{{ route('all.supplier')}}">All supplier</a></li>
@@ -244,6 +242,15 @@
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('add.category')}}">Add Category</a></li>
                                     <li><a href="{{ route('all.category')}}">All Category</a></li>
+ 
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Products </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ route('add.product')}}">Add Product</a></li>
+                                    <li><a href="{{ route('all.product')}}">All Product</a></li>
  
                                 </ul>
                             </li>
