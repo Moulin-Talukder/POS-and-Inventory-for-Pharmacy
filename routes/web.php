@@ -74,3 +74,8 @@ Route::get('/delete-category/{id}', 'CategoryController@DeleteCategory');
 Route::get('/edit-category/{id}', 'CategoryController@EditCategory');
 Route::post('/update-category/{id}', 'CategoryController@UpdateCategory');
 
+//EXPENSE ROUTES ARE HERE
+Route::get('/add-expense', 'ExpenseController@AddExpense')->name('add.expense');
+Route::post('/insert-expense', 'ExpenseController@InsertExpense')->name('insert.expense');
+Route::get('/today-expense', 'ExpenseController@TodayExpense')->name('today.expense');
+
