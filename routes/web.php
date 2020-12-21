@@ -78,4 +78,7 @@ Route::post('/update-category/{id}', 'CategoryController@UpdateCategory');
 Route::get('/add-expense', 'ExpenseController@AddExpense')->name('add.expense');
 Route::post('/insert-expense', 'ExpenseController@InsertExpense')->name('insert.expense');
 Route::get('/today-expense', 'ExpenseController@TodayExpense')->name('today.expense');
+Route::get('/edit-today-expense/{id}', 'ExpenseController@EditTodayExpense');
+Route::post('/update-today-expense/{id}', 'ExpenseController@UpdateTodayExpense');
+Route::get('/monthly-expense', 'ExpenseController@MonthlyExpense')->name('monthly.expense');
 

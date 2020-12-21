@@ -17,6 +17,10 @@
                                 </ol>
                             </div>
                         </div>
+                        @php
+                        $date= date("d/m/y");
+                        $expense=DB::table('expenses')->where('date', $date)->sum('amount');
+                        @endphp
 
                         <!-- Start Widget -->
                         <div class="row">
@@ -33,10 +37,11 @@
                               @endif
                                    
                               <div class="col-md-12">
+                              <h4 style=" color: red; font-size: 30px;" align="center">Total : {{ $expense }} Taka</h4>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">All Suppliers
-                                        <a href="{{ route('add.supplier')}}" class="btn btn-sm btn-info pull-right">Add New</a>
+                                        <h3 class="panel-title">Today Expense
+                                        <a href="{{ route('add.expense')}}" class="btn btn-sm btn-info pull-right">Add New</a>
                                         </h3>
                                         
                                     </div>
@@ -46,28 +51,21 @@
                                                 <table id="datatable" class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th>Name</th>
-                                                            <th>Phone</th>
-                                                            <th>Address</th>
-                                                            <th>Image</th>
-                                                            <th>City</th>
+                                                            <th>Details</th>
+                                                            <th>Amount</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
 
                                              
                                                     <tbody>
-                                                    @foreach($supplier as $row)
+                                                    @foreach($today as $row)
                                                         <tr>
-                                                            <td>{{ $row->name }}</td>
-                                                            <td>{{ $row->phone }}</td>
-                                                            <td>{{ $row->address }}</td>
-                                                            <td><img src="{{$row->photo}}" style="height: 60px; width: 60px;"></td>
-                                                            <td>{{ $row->city }}</td>
+                                                            <td>{{ $row->details }}</td>
+                                                            <td>{{ $row->amount }}</td>
                                                             <td>
-                                                            <a href="{{ URL::to('edit-supplier/'.$row->id)}}" class="btn btn-sm btn-info">Edit</a>
-                                                            <a href="{{ URL::to('delete-supplier/'.$row->id)}}" class="btn btn-sm btn-danger" id="delete">Delete</a>
-                                                            <a href="{{ URL::to('view-supplier/'.$row->id)}}" class="btn btn-sm btn-primary">View</a>
+                                                            <a href="{{ URL::to('edit-today-expense/'.$row->id)}}" class="btn btn-sm btn-info">Edit</a>
+                                                        
                                                             </td>
                                                         </tr>
                                                     @endforeach

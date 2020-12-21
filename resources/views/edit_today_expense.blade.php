@@ -37,22 +37,24 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h3 class="panel-title">Add Expense
                                     <a href="{{ route('today.expense') }}" class="btn btn-sm btn-danger pull-right">Today</a>
-                                    <a href="{{ route('monthly.expense')}}" class="btn btn-sm btn-info pull-right">This Month</a>
+                                    <a href="" class="btn btn-sm btn-info pull-right">This Month</a>
                                     </h3>
                                     
                                     </div>
 
                                  
                                     <div class="panel-body">
-                                        <form role="form" action="{{ route('insert.expense') }}" method="post">
+                                        <form role="form" action="{{ url('/update-today-expense/'.$tdy->id) }}" method="post">
                                         @csrf
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Expense Details</label>
-                                                <textarea class="form-control" rows="4"  name="details"></textarea>
+                                                <textarea class="form-control" rows="4"  name="details">
+                                                {{$tdy->details}}
+                                                </textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Amount</label>
-                                                <input type="text" class="form-control" name="amount" placeholder="Amount" required>
+                                                <input type="text" class="form-control" name="amount" value="{{$tdy->amount}}" placeholder="Amount" required>
                                             </div>
 
                                             <div class="form-group">                                          
@@ -65,7 +67,7 @@
                                                 <input type="hidden" class="form-control" name="year" value="{{date("Y")}}">
                                             </div>
 
-                                            <button type="submit" class="btn btn-purple waves-effect waves-light">Submit</button>
+                                            <button type="submit" class="btn btn-purple waves-effect waves-light">Update</button>
                                         </form>
                                     </div><!-- panel-body -->
                                 </div> <!-- panel -->
