@@ -35,10 +35,7 @@
                                                       <div class="col-md-2"></div>
                                                       <div class="col-md-8">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">Add Expense
-                                    <a href="{{ route('today.expense') }}" class="btn btn-sm btn-danger pull-right">Today</a>
-                                    <a href="" class="btn btn-sm btn-info pull-right">This Month</a>
-                                    </h3>
+                                    <div class="panel-heading"><h3 class="panel-title">Update Expense</h3>
                                     
                                     </div>
 
