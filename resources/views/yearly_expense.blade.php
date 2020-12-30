@@ -17,21 +17,6 @@
                                 </ol>
                             </div>
                         </div>
-
-                        <div>
-                        <a href="{{route('january.expense')}}" class="btn btn-sm btn-info">January</a>
-                        <a href="{{route('february.expense')}}" class="btn btn-sm btn-danger">February</a>
-                        <a href="{{route('march.expense')}}" class="btn btn-sm btn-success">March</a>
-                        <a href="{{route('april.expense')}}" class="btn btn-sm btn-primary">April</a>
-                        <a href="{{route('may.expense')}}" class="btn btn-sm btn-warning">May</a>
-                        <a href="{{route('june.expense')}}" class="btn btn-sm btn-info">June</a>
-                        <a href="{{route('july.expense')}}" class="btn btn-sm btn-danger">July</a>
-                        <a href="{{route('august.expense')}}" class="btn btn-sm btn-success">August</a>
-                        <a href="{{route('september.expense')}}" class="btn btn-sm btn-primary">September</a>
-                        <a href="{{route('october.expense')}}" class="btn btn-sm btn-warning">October</a>
-                        <a href="{{route('november.expense')}}" class="btn btn-sm btn-default">November</a>
-                        <a href="{{route('december.expense')}}" class="btn btn-sm btn-info">December</a>
-                        </div>
                      
                         <!-- Start Widget -->
                         <div class="row">
@@ -50,7 +35,7 @@
                               <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title text-danger"><!--{{date("F")}}!--> Monthly Expense</h3>
+                                        <h3 class="panel-title text-danger">{{date("Y")}} All Expense</h3>
                                         
                                     </div>
                                     <div class="panel-body">
@@ -76,10 +61,10 @@
                                                 </table>
 
                                                 @php
-                                                $month=date("F");
-                                                $total=DB::table('expenses')->where('month', $month)->sum('amount');
+                                                $year=date("Y");
+                                                $total=DB::table('expenses')->where('year', $year)->sum('amount');
                                                 @endphp
-                                                <h4 style="color: red;" align="center">Total Expense: {{ $total }} Taka</h4>
+                                                <h4 style="color: red;" align="center">Yearly Expense: {{ $total }} Taka</h4>
 
                                             </div>
                                         </div>

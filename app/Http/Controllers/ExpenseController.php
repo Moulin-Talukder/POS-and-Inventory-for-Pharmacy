@@ -83,4 +83,88 @@ class ExpenseController extends Controller
         return view('monthly_expense', compact('expense'));
 
     }
+    public function YearlyExpense(){
+
+        $year = date("Y");
+        $expense=DB::table('expenses')->where('year', $year)->get();
+
+        return view('yearly_expense', compact('expense'));
+
+    }
+
+    public function DecemberExpense(){
+        $month = "December";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+
+    public function JanuaryExpense(){
+        $month = "January";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+
+    public function FebruaryExpense(){
+        $month = "February";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function MarchExpense(){
+        $month = "March";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function AprilExpense(){
+        $month = "April";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function MayExpense(){
+        $month = "May";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function JuneExpense(){
+        $month = "June";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function JulyExpense(){
+        $month = "July";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function AugustExpense(){
+        $month = "August";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function SeptemberExpense(){
+        $month = "September";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function OctoberExpense(){
+        $month = "October";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+    public function NovemberExpense(){
+        $month = "November";
+        $expense=DB::table('expenses')->where('month', $month)->get();
+
+        return view('monthly_expense', compact('expense'));
+    }
+
 }

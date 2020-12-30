@@ -195,6 +195,10 @@
                                 <a href="{{ route('home')}}" class="waves-effect active"><i class="md md-home"></i><span> Dashboard </span></a>
                             </li>
 
+                            <li>
+                                <a href="{{ route('home')}}" class="waves-effect"><i class="md md-home"></i><span class="text-primary"><b>POS</b> </span></a>
+                            </li>
+
                             <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="fas fa-users"></i><span> Employees </span><span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
@@ -260,7 +264,24 @@
                                     <li><a href="{{ route('add.expense')}}">Add New</a></li>
                                     <li><a href="{{ route('today.expense')}}">Today Expense</a></li>
                                     <li><a href="{{ route('monthly.expense')}}">Monthly Expense</a></li>
+                                    <li><a href="{{ route('yearly.expense')}}">Yearly Expense</a></li>
  
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Sales Report </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">First</a></li>
+                                    <li><a href="#">Second</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Attendence </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">First</a></li>
+                                    <li><a href="#">Second</a></li>
                                 </ul>
                             </li>
 
