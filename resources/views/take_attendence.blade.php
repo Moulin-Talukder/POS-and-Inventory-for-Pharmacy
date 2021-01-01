@@ -18,27 +18,15 @@
                             </div>
                         </div>
 
-                        <div>
-                        <a href="{{route('january.expense')}}" class="btn btn-sm btn-info">January</a>
-                        <a href="{{route('february.expense')}}" class="btn btn-sm btn-danger">February</a>
-                        <a href="{{route('march.expense')}}" class="btn btn-sm btn-success">March</a>
-                        <a href="{{route('april.expense')}}" class="btn btn-sm btn-primary">April</a>
-                        <a href="{{route('may.expense')}}" class="btn btn-sm btn-warning">May</a>
-                        <a href="{{route('june.expense')}}" class="btn btn-sm btn-info">June</a>
-                        <a href="{{route('july.expense')}}" class="btn btn-sm btn-danger">July</a>
-                        <a href="{{route('august.expense')}}" class="btn btn-sm btn-success">August</a>
-                        <a href="{{route('september.expense')}}" class="btn btn-sm btn-primary">September</a>
-                        <a href="{{route('october.expense')}}" class="btn btn-sm btn-warning">October</a>
-                        <a href="{{route('november.expense')}}" class="btn btn-sm btn-default">November</a>
-                        <a href="{{route('december.expense')}}" class="btn btn-sm btn-info">December</a>
-                        </div>
-                     
                         <!-- Start Widget -->
                         <div class="row">
 
                         <!-- toggle message -->
                         @if(session()->has('message'))
                                     <p class="alert alert-success">{{session()->get('message')}}</p>
+                                    @endif
+                        @if(session()->has('error'))
+                                    <p class="alert alert-danger">{{session()->get('error')}}</p>
                                     @endif
 
                                     @if($errors->any())
@@ -50,39 +38,44 @@
                               <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title text-danger"><!--{{date("F")}}!--> Monthly Expense</h3>
-                                        
+                                        <h3 class="panel-title">Take Attendence <a href="{{ route('all.attendence')}}" class="btn btn-sm btn-info pull-right">All Attendences</a></h3>
                                     </div>
+                                    <h3 class="text-success" align="center">Today {{date("d/m/y")}}</h3>
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <table id="datatable" class="table table-striped table-bordered">
+                                                <table class="table table-striped table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th>Details</th>
-                                                            <th>Date</th>
-                                                            <th>Amount</th>                                                           
+                                                            <th>Name</th>
+                                                            <th>Photo</th>
+                                                            <th>Attendence</th>
+ 
                                                         </tr>
                                                     </thead>
 
                                              
                                                     <tbody>
-                                                    @foreach($expense as $row)
+                                                    <form action="{{ url('/insert-attendence')}}" method="post">
+                                                    @csrf
+                                                    @foreach($employee as $row)
                                                         <tr>
-                                                            <td>{{ $row->details }}</td>
-                                                            <td>{{ $row->date }}</td>
-                                                            <td>{{ $row->amount }}</td>
+                                                            <td>{{ $row->name }}</td>
+                                                            <td><img src="{{$row->photo}}" style="height: 60px; width: 60px;"></td>
+                                                            <input type="hidden" name="user_id[]" value="{{$row->id}}">
+                                                            <td>
+                                                            <input type="radio" name="attendence[{{$row->id}}]" value="Present" required> Present
+                                                            <input type="radio" name="attendence[{{$row->id}}]" value="Absent"> Absent
+                                                            </td>
+                                                            <input type="hidden" name="att_date" value="{{ date("d/m/y")}}">
+                                                            <input type="hidden" name="att_year" value="{{ date("Y")}}">
                                                         </tr>
                                                     @endforeach
+                                                    
                                                     </tbody>
                                                 </table>
-
-                                                @php
-                                                $month=date("F");
-                                                $total=DB::table('expenses')->where('month', $month)->sum('amount');
-                                                @endphp
-                                                <h4 style="color: red;" align="center">Total Expense: {{ $total }} Taka</h4>
-
+                                                <button type="submit" class="btn btn-success">Take Attendence</button>
+                                                  </form>
                                             </div>
                                         </div>
                                     </div>

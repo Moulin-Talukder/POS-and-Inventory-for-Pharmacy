@@ -58,7 +58,7 @@ class SalaryController extends Controller
                         return Redirect()->back()->with('message','Successfully Advance Paid in this Month.');
 
                       }else{
-                        return Redirect()->back()->with('message','Already Paid.');
+                        return Redirect()->back()->with('error','Already Paid.');
 
                       }
 

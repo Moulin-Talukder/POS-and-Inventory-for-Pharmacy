@@ -95,3 +95,11 @@ Route::get('/september-expense', 'ExpenseController@SeptemberExpense')->name('se
 Route::get('/october-expense', 'ExpenseController@OctoberExpense')->name('october.expense');
 Route::get('/november-expense', 'ExpenseController@NovemberExpense')->name('november.expense');
 
+// ATTENDENCE ROUTES ARE HERE
+Route::get('/take-attendence', 'AttendenceController@TakeAttendence')->name('take.attendence');
+Route::post('/insert-attendence', 'AttendenceController@InsertAttendence')->name('insert.attendence');
+Route::get('/all-attendence', 'AttendenceController@AllAttendence')->name('all.attendence');
+Route::get('/edit-attendence/{edit_date}', 'AttendenceController@EditAttendence');
+
+//SETTINGS ROUTES ARE HERE
+Route::get('/website-settings', 'SettingsController@Settings')->name('settings');

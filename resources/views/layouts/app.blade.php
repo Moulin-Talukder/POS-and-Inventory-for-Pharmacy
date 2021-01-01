@@ -280,8 +280,14 @@
                             <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Attendence </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">First</a></li>
-                                    <li><a href="#">Second</a></li>
+                                    <li><a href="{{ route('take.attendence')}}">Take Attendence</a></li>
+                                    <li><a href="{{ route('all.attendence')}}">All Attendences</a></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Settings </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ route('settings')}}">Settings</a></li>
                                 </ul>
                             </li>
 
