@@ -40,7 +40,7 @@
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Update Attendence <a href="{{ route('all.attendence')}}" class="btn btn-sm btn-info pull-right">All Attendences</a></h3>
                                     </div>
-                                    <h3 class="text-success" align="center">Update Attendence</h3>
+                                    <h3 class="text-success" align="center">Update Attendence {{ $date->att_date}} </h3>
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -56,13 +56,13 @@
 
                                              
                                                     <tbody>
-                                                    <form action="{{ url('/insert-attendence')}}" method="post">
+                                                    <form action="{{ url('/update-attendence')}}" method="post">
                                                     @csrf
                                                     @foreach($data as $row)
                                                         <tr>
                                                             <td>{{ $row->name }}</td>
                                                             <td><img src="{{ URL::to($row->photo)}}" style="height: 60px; width: 60px;"></td>
-                                                            <input type="hidden" name="user_id[]" value="{{$row->id}}">
+                                                            <input type="hidden" name="id[]" value="{{$row->id}}">
                                                             <td>
                                                             <input type="radio" name="attendence[{{$row->id}}]" value="Present" required <?php if($row->attendence == 'Present'){
                                                                 echo "checked";

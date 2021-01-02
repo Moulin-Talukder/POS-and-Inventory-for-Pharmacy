@@ -100,6 +100,8 @@ Route::get('/take-attendence', 'AttendenceController@TakeAttendence')->name('tak
 Route::post('/insert-attendence', 'AttendenceController@InsertAttendence')->name('insert.attendence');
 Route::get('/all-attendence', 'AttendenceController@AllAttendence')->name('all.attendence');
 Route::get('/edit-attendence/{edit_date}', 'AttendenceController@EditAttendence');
+Route::post('/update-attendence', 'AttendenceController@UpdateAttendence');
+Route::get('/view-attendence/{edit_date}', 'AttendenceController@ViewAttendence');
 
 //SETTINGS ROUTES ARE HERE
 Route::get('/website-settings', 'SettingsController@Settings')->name('settings');
