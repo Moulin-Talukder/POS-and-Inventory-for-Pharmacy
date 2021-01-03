@@ -86,7 +86,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                            <img id="image" src="#" />
+                                            <!-- <img id="image" src="#" /> -->
                                                 <label for="exampleInputPassword1">Photo</label>
                                                 <input type="file" name="photo" accept="image/*" class="upload" required onchange="readURL(this);">
                                             </div>

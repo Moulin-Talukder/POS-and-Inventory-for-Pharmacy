@@ -42,57 +42,52 @@
                                         <form role="form" action="{{ url('/update-website/'.$settings->id) }}" method="post" enctype="multipart/form-data">
                                         @csrf
 
-                                        <!-- <div class="form-group">
-                                            <img src="{{ URL::to($settings->photo)}}" name="old_photo" style="height: 80px; width: 80px;">
-                                            </div> -->
+                                        <div class="form-group">
+                                            <img src="{{ URL::to($settings->company_logo)}}" name="old_photo" style="height: 80px; width: 80px;">
+                                            </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Company Name</label>
-                                                <input type="text" class="form-control" name="name" value="{{$settings->name}}" required>
+                                                <input type="text" class="form-control" name="company_name" value="{{$settings->company_name}}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Email</label>
-                                                <input type="email" class="form-control" name="email" value="{{$settings->email}}" >
+                                                <input type="email" class="form-control" name="company_email" value="{{$settings->company_email}}" >
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Phone</label>
-                                                <input type="text" class="form-control" name="phone" value="{{$settings->phone}}" required>
+                                                <label for="exampleInputPassword1">Company Phone</label>
+                                                <input type="text" class="form-control" name="company_phone" value="{{$settings->company_phone}}" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Address</label>
-                                                <input type="text" class="form-control" name="address" value="{{$settings->address}}" required>
+                                                <label for="exampleInputPassword1">Company Mobile</label>
+                                                <input type="text" class="form-control" name="company_mobile" value="{{$settings->company_mobile}}" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Experience</label>
-                                                <input type="text" class="form-control" name="experience" value="{{$settings->experience}}" required>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">NID NO.</label>
-                                                <input type="text" class="form-control" name="nid_no" value="{{$settings->nid_no}}" >
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Salary</label>
-                                                <input type="text" class="form-control" name="salary" value="{{$settings->salary}}" required>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Vacation</label>
-                                                <input type="text" class="form-control" name="vacation" value="{{$settings->vacation}}" required>
+                                                <label for="exampleInputPassword1">Company Address</label>
+                                                <input type="text" class="form-control" name="company_address" value="{{$settings->company_address}}" required>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">City</label>
-                                                <input type="text" class="form-control" name="city" value="{{$settings->city}}" required>
+                                                <input type="text" class="form-control" name="company_city" value="{{$settings->company_city}}" >
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Country</label>
+                                                <input type="text" class="form-control" name="company_country" value="{{$settings->company_country}}" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Zip Code</label>
+                                                <input type="text" class="form-control" name="company_zipcode" value="{{$settings->company_zipcode}}" required>
                                             </div>
 
                                             <div class="form-group">
                                             <!-- <img id="image" src="#" /> -->
                                                 <label for="exampleInputPassword1">New Photo</label>
-                                                <input type="file" name="photo" accept="image/*" class="upload" onchange="readURL(this);">
+                                                <input type="file" name="company_logo" accept="image/*" class="upload" onchange="readURL(this);">
                                             </div>
 
                                             

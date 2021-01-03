@@ -105,3 +105,7 @@ Route::get('/view-attendence/{edit_date}', 'AttendenceController@ViewAttendence'
 
 //SETTINGS ROUTES ARE HERE
 Route::get('/website-settings', 'SettingsController@Settings')->name('settings');
+Route::post('/update-website/{id}', 'SettingsController@UpdateWebsite');
+
+//POS ROUTES ARE HERE
+Route::get('/pos', 'POSController@index')->name('pos');

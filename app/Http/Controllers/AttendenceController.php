@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Attendence;
-use App\Models\Setting;
+
 
 
 class AttendenceController extends Controller
