@@ -45,7 +45,7 @@
                                     <a href="#" class="btn btn-sm btn-primary waves-effect waves-light pull-right" data-toggle="modal" data-target="#con-close-modal">Add New</a>
                                   </h4>
                                   @php
-                                  $customer=Customer::get();
+                                  $customer=DB::table('customers')->get();
                                   @endphp
                                   <select class="form-control" name="cus_id"> 
                                       <option disabled selected>Select Customer</option>
