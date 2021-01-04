@@ -109,3 +109,7 @@ Route::post('/update-website/{id}', 'SettingsController@UpdateWebsite');
 
 //POS ROUTES ARE HERE
 Route::get('/pos', 'POSController@index')->name('pos');
+Route::post('/add-cart', 'POSController@AddCart');
+Route::post('/cart-update/{rowId}', 'POSController@CartUpdate');
+Route::get('/cart-remove/{rowId}', 'POSController@CartRemove');
+Route::post('/create-invoice', 'POSController@CreateInvoice');

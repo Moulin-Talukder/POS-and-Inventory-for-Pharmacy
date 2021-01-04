@@ -57,12 +57,12 @@ class CustomerController extends Controller
                 $data['photo']=$image_url;
                 $customer=DB::table('customers')
                 ->insert($data);
-                return Redirect()->route('add.customer')->with('message','Customer Added Successfully.');
+                return Redirect()->back()->with('message','Customer Added Successfully.');
 
             }
         }
 
-        return redirect()->route('add.customer')->with('message','Customer Added Successfully.');
+        return redirect()->back()->with('message','Customer Added Successfully.');
     }
     //view all customer
     public function AllCustomer(){
