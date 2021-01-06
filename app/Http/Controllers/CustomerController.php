@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -55,8 +56,8 @@ class CustomerController extends Controller
             $success=$image->move($upload_path,$image_full_name);
             if($success){
                 $data['photo']=$image_url;
-                $customer=DB::table('customers')
-                ->insert($data);
+                $customer=Customer::
+                insert($data);
                 return Redirect()->back()->with('message','Customer Added Successfully.');
 
             }
@@ -66,8 +67,8 @@ class CustomerController extends Controller
     }
     //view all customer
     public function AllCustomer(){
-            $customer=DB::table('customers')->get();
-            return view("all_Customer")->with('customer', $customer);
+            $customer=Customer::get();
+            return view('all_Customer', compact('customer'));
 
     }
 

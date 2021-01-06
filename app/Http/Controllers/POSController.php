@@ -67,7 +67,17 @@ class POSController extends Controller
 
     public function CreateInvoice(Request $request){
 
-        echo "done";
+          $request->validate([
+            'cus_id' => 'required',
+          ],
+          [
+              'cus_id.required' => 'Select A Customer First !',
+          ]);
 
+          $cus_id=$request->cus_id;
+          $customer=Customer::where('id', $cus_id)->first();
+          $contents=Cart::content();
+
+        return view('invoice', compact('customer', 'contents'));
     }
 }

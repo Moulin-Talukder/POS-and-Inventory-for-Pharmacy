@@ -24,43 +24,24 @@
                                     <p class="alert alert-success">{{session()->get('message')}}</p>
                                     @endif
 
-                                    @if($errors->any())
+                                    <!-- @if($errors->any())
                                     @foreach($errors->all() as $er)
                                     <p class="alert alert-danger">{{$er}}</p>
                                 @endforeach
-                              @endif
+                              @endif -->
                             <div class="col-lg-12 col-md-12 col-sm-12 ">
                                 <div class="portfolioFilter">
                                     @foreach($category as $row)
                                     <a href="#" data-filter="*" class="current">{{$row->cat_name}}</a>
                                     @endforeach
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <br> 
                         <div class="row">
                         <div class="col-lg-6">
-                             <div class="panel">
-                                  <h4 class="text-info">Customer
-                                    <a href="#" class="btn btn-sm btn-primary waves-effect waves-light pull-right" data-toggle="modal" data-target="#con-close-modal">Add New</a>
-                                  </h4>
-                                  @php
-                                  $customer=DB::table('customers')->get();
-                                  @endphp
-                                  <select class="form-control" name="cus_id"> 
-                                      <option disabled selected>Select Customer</option>
-                                      @foreach($customer as $cus)
-                                      <option value="{{$cus->name}}">{{$cus->name}}</option>
-                                      @endforeach
-                                  </select>
 
-                             </div>
-
-
-
-
-                             <div class="price_card text-center">
-                         
+                             <div class="price_card text-center">          
                                         <ul class="price-features" style="border:1px solid grey;">
                                             <table class="table">
                                                 <thead class="bg-info">
@@ -102,9 +83,37 @@
                                             <p style="font-size: 19px;">Vat: {{ Cart::tax() }}</p>
                                             <hr>
                                             <p style="font-size: 19px;"><h2 class="text-white">Total:</h2> <h1 class="text-white">{{ Cart::total() }}</h1></p>
+
+                                        
                                             <form method="post" action="{{ url('/create-invoice')}}">
                                               @csrf
-                                              <input type="hidden" name="cus_id" value="{{$cus->id}}">
+
+                                        <div class="panel"><br><br>
+
+                                             @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                            </div>
+                                            @endif
+
+                                            <h4 class="text-info">Select Customer
+                                            <a href="#" class="btn btn-sm btn-primary waves-effect waves-light pull-right" data-toggle="modal" data-target="#con-close-modal">Add New</a>
+                                            </h4>
+                                            @php
+                                            $customer=DB::table('customers')->get();
+                                            @endphp
+                                            <select class="form-control" name="cus_id"> 
+                                                <option disabled selected>Select Customer</option>
+                                                @foreach($customer as $cus)
+                                                <option value="{{$cus->id}}">{{$cus->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                              
                                         </div>
                                         <button type="submit" class="btn btn-success">Create Invoice</button>
                                     </div> <!-- end Pricing_card -->
