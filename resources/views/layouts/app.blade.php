@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Norshindi Medicine Corner') }}</title>
+    <title>Norshindi Medicine Corner</title>
 
     <!-- Scripts -->
     <link href="{{ asset('public/admin/css/bootstrap.min.css') }}" rel="stylesheet" />
@@ -52,7 +52,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-                        <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>Moltran </span></a>
+                        <a href="index.html" class="logo"><i class="fas fa-clinic-medical"></i><span>NMC</span></a>
                     </div>
                 </div>
                 <!-- Button mobile view to collapse sidebar menu -->
@@ -196,7 +196,7 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('pos')}}" class="waves-effect"><i class="md md-home"></i><span class="text-primary"><b>POS</b> </span></a>
+                                <a href="{{ route('pos')}}" class="waves-effect"><i class="fab fa-product-hunt"></i><span class="text-primary"><b>POS</b> </span></a>
                             </li>
 
                             <li class="has_sub">
@@ -228,7 +228,7 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Salary (EMP) </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fas fa-dollar-sign"></i></i> <span> Salary (EMP) </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('add.advancedsalary')}}">Add Advanced Salary</a></li>
                                     <li><a href="{{ route('all.advancedsalary')}}">All Advanced Salary</a></li>
@@ -242,7 +242,7 @@
 
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Category </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fab fa-product-hunt"></i> <span> Category </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('add.category')}}">Add Category</a></li>
                                     <li><a href="{{ route('all.category')}}">All Category</a></li>
@@ -251,7 +251,7 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Products </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fab fa-product-hunt"></i></i> <span> Products </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('add.product')}}">Add Product</a></li>
                                     <li><a href="{{ route('all.product')}}">All Product</a></li>
@@ -259,7 +259,7 @@
                                 </ul>
                             </li>
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Expense </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fas fa-dollar-sign"></i> <span> Expense </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('add.expense')}}">Add New</a></li>
                                     <li><a href="{{ route('today.expense')}}">Today Expense</a></li>
@@ -270,26 +270,30 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Sales Report </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fab fa-product-hunt"></i> <span>Orders</span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">First</a></li>
-                                    <li><a href="#">Second</a></li>
+                                    <li><a href="{{ route('pending.orders')}}">Pending Orders</a></li>
+                                    <li><a href="{{ route('success.orders')}}">Success Orders</a></li>
                                 </ul>
                             </li>
 
                             <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Attendence </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <a href="#" class="waves-effect"><i class="fas fa-users"></i> <span> Attendence </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('take.attendence')}}">Take Attendence</a></li>
                                     <li><a href="{{ route('all.attendence')}}">All Attendences</a></li>
                                 </ul>
                             </li>
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Settings </span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{{ route('settings')}}">Settings</a></li>
-                                </ul>
+
+                            <li>
+                                <a href="{{ route('today.sales')}}" class="waves-effect"><i class="fas fa-file-alt"></i>Sales Report</span></a>
                             </li>
+
+                            <li>
+                                <a href="{{ route('settings')}}" class="waves-effect"><i class="fas fa-user-cog"></i>Settings</span></a>
+                            </li>
+
+                           
 
 
                    <!--          <li class="has_sub">

@@ -113,3 +113,13 @@ Route::post('/add-cart', 'POSController@AddCart');
 Route::post('/cart-update/{rowId}', 'POSController@CartUpdate');
 Route::get('/cart-remove/{rowId}', 'POSController@CartRemove');
 Route::post('/create-invoice', 'POSController@CreateInvoice');
+Route::post('/final-invoice', 'POSController@FinalInvoice');
+Route::get('/pending-order', 'POSController@PendingOrder')->name('pending.orders');
+Route::get('/view-order-status/{id}', 'POSController@ViewOrder');
+Route::get('/POS-done/{id}', 'POSController@POSDone');
+Route::get('/success-order', 'POSController@SuccessOrder')->name('success.orders');
+
+//SALES ROUTES ARE HERE
+Route::get('/today-sales', 'SalesController@TodaySales')->name('today.sales');
+
+
