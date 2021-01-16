@@ -41,12 +41,12 @@
                                                       <div class="col-md-8">
                                 
                                 <div class="panel panel-info">
-                                    <div class="panel-heading"><h3 class="panel-title text-white">Advanced Salary Provide</h3></div>
-                                    <a href="{{ route('all.advancedsalary')}}" class="pull-right btn btn-primary btn-sm">All Advanced Salary</a>
+                                    <div class="panel-heading"><h3 class="panel-title text-white">Salary Provide</h3></div>
+                                    <a href="{{ route('all.salary')}}" class="pull-right btn btn-primary btn-sm">All Salary</a>
 
                                     <div class="panel-body">
 
-                                        <form role="form" action="{{ route('insert.advancedsalary') }}" method="post" enctype="multipart/form-data">
+                                        <form role="form" action="{{ route('insert.salary') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                                 <label for="exampleInputPassword1">Employee</label>
@@ -81,8 +81,8 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Advanced Salary</label>
-                                                <input type="text" class="form-control" name="advanced_salary" placeholder="Advance Salary" required>
+                                                <label for="exampleInputPassword1">Salary</label>
+                                                <input type="text" class="form-control" name="advanced_salary" placeholder="Salary" required>
                                             </div>
 
                                             <div class="form-group">

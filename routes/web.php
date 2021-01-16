@@ -60,10 +60,11 @@ Route::get('/view-supplier/{id}', 'SupplierController@ViewSupplier');
 Route::get('/delete-supplier/{id}', 'SupplierController@DeleteSupplier');
 
 //SALARY ROUTES ARE HERE
-Route::get('/add-advanced-salary', 'SalaryController@AddAdvancedSalary')->name('add.advancedsalary');
-Route::post('/insert-advancedsalary', 'SalaryController@InsertAdvanced')->name('insert.advancedsalary');
-Route::get('/all-advanced-salary', 'SalaryController@AllSalary')->name('all.advancedsalary');
-Route::get('/pay-salary', 'SalaryController@PaySalary')->name('pay.salary');
+Route::get('/add-salary', 'SalaryController@AddSalary')->name('add.salary');
+Route::post('/insert-salary', 'SalaryController@InsertSalary')->name('insert.salary');
+Route::post('/update-salary', 'SalaryController@UpdateSalary')->name('update.salary');
+Route::get('/all-salary', 'SalaryController@AllSalary')->name('all.salary');
+Route::get('/pay-salary/{id}', 'SalaryController@PaySalary')->name('pay.salary');
 
 
 //CATEGORY ROUTES ARE HERE

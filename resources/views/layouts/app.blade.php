@@ -75,7 +75,7 @@
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">3</span>
+                                        <!-- <i class="md md-notifications"></i> <span class="badge badge-xs badge-danger">3</span> -->
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-lg">
                                         <li class="text-center notifi-title">Notification</li>
@@ -133,15 +133,15 @@
                                 <li class="hidden-xs">
                                     <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="md md-crop-free"></i></a>
                                 </li>
-                                <li class="hidden-xs">
+                                <!-- <li class="hidden-xs">
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="md md-chat"></i></a>
-                                </li>
+                                </li> -->
                                 <li class="dropdown">
                                     <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ URL::to('public/admin/images/accc.png') }}" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
-                                        <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
-                                        <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
+                                        <!-- <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li> -->
+                                        <!-- <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                                        <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li> -->
                                         <li><li><a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="md md-settings-power"></i> Logout</a>
@@ -230,11 +230,8 @@
                             <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="fas fa-dollar-sign"></i></i> <span> Salary (EMP) </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{ route('add.advancedsalary')}}">Add Advanced Salary</a></li>
-                                    <li><a href="{{ route('all.advancedsalary')}}">All Advanced Salary</a></li>
-                                    <li><a href="{{ route('pay.salary')}}">Pay Salary</a></li>
-                                    <li><a href="">Last Month Salary</a></li>
-
+                                    <li><a href="{{ route('add.salary')}}">Pay Salary</a></li>
+                                    <li><a href="{{ route('all.salary')}}">All Salary</a></li>
 
  
                                 </ul>

@@ -82,8 +82,8 @@ class EmployeeController extends Controller
 //view a single employee
     public function ViewEmployee($id){
 
-        $single=DB::table('employees')
-                ->where('id',$id)
+        $single=Employee::
+                where('id',$id)
                 ->first();
         return view('view_employee', compact('single'));        
 

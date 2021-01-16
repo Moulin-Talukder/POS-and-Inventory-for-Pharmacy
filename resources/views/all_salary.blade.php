@@ -35,8 +35,8 @@
                               <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">All Advanced Salary
-                                        <a href="{{ route('add.advancedsalary')}}" class="btn btn-sm btn-info pull-right">Add New</a>
+                                        <h3 class="panel-title">All Salary
+                                        <a href="{{ route('add.salary')}}" class="btn btn-sm btn-info pull-right">Add New</a>
                                         </h3>
                                         
                                     </div>
@@ -50,7 +50,9 @@
                                                             <th>Photo</th>
                                                             <th>Salary</th>
                                                             <th>Month</th>
-                                                            <th>Advanced</th>
+                                                            <th>Year</th>
+                                                            <th>Paid</th>
+                                                            <th>Due</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
@@ -63,11 +65,15 @@
                                                             <td><img src="{{$row->photo}}" style="height: 60px; width: 60px;"></td>
                                                             <td>{{ $row->salary }}</td>
                                                             <td>{{ $row->month }}</td>
+                                                            <td>{{ $row->year }}</td>
                                                             <td>{{ $row->advanced_salary }}</td>
+                                                            <td>{{ $row->salary-$row->advanced_salary }}</td>
                                                             <td>
-                                                            <a href="#" class="btn btn-sm btn-info">Edit</a>
-                                                            <a href="#" class="btn btn-sm btn-danger" id="delete">Delete</a>
-                                                            <a href="#" class="btn btn-sm btn-primary">View</a>
+                                                            @if($row->salary-$row->advanced_salary == '0')
+                                                            <a href="#" class="btn btn-success" disabled >Paid</a>
+                                                            @else
+                                                            <a href="{{ URL::to('pay-salary/'.$row->id)}}" class="btn btn-info">Pay Now</a>
+                                                            @endif
                                                             </td>
                                                         </tr>
                                                     @endforeach
