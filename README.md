@@ -9,7 +9,6 @@ POS and Inventory for Pharmacy is a comprehensive Point of Sale (POS) system dev
 - [Admin Features](#admin-features)
 - [Installation](#installation)
 - [Support](#support)
-- [License](#license)
 
 ## Overview
 
